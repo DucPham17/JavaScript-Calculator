@@ -117,29 +117,38 @@ class App extends React.Component {
 
  render(){
    return (
-     <div>
-       <Button id={"zero"} value={"0"} handleNumber={this.handleNumber}/>
-       <Button id={"one"} value={"1"} handleNumber={this.handleNumber}/>
-       <Button id={"two"} value={"2"} handleNumber={this.handleNumber}/>
-       <Button id={"three"} value={"3"} handleNumber={this.handleNumber}/>
-       <Button id={"four"} value={"4"} handleNumber={this.handleNumber}/>
-       <Button id={"five"} value={"5"} handleNumber={this.handleNumber}/>
-       <Button id={"six"} value={"6"} handleNumber={this.handleNumber}/>
-       <Button id={"seven"} value={"7"} handleNumber={this.handleNumber}/>
-       <Button id={"eight"} value={"8"} handleNumber={this.handleNumber}/>
-       <Button id={"nine"} value={"9"} handleNumber={this.handleNumber}/>
-       <div> <button id="equals" onClick={this.handleEvaluate}>=</button> </div>
-       <div> <button id="add" value="+" onClick={this.handleOperactor}>+</button> </div>
-       <div> <button id="subtract" value="-" onClick={this.handleOperactor}>-</button> </div>
-       <div> <button id="multiply" value="*" onClick={this.handleOperactor}>*</button> </div>
-       <div> <button id="divide" value="/" onClick={this.handleOperactor}>/</button> </div>
-       <div> <button id="decimal" value="." onClick={this.handleDecimal}>.</button> </div>
-       <div> <button id="clear" onClick={this.handleClear}> AC</button></div>
-       <div >
-         {this.state.formula}
+     <div id="container">
+       <div> <button className="btn-block btn-danger" id="clear" onClick={this.handleClear} className="col m 12"> AC</button></div>
+       <div className="abc">
+       <div className="btn"> <Button className={"btn-default"}  id={"seven"} value={"7"} handleNumber={this.handleNumber}/> </div>
+       <div className="btn"> <Button className={"btn-default"}  id={"eight"} value={"8"} handleNumber={this.handleNumber}/> </div>
+       <div className="btn"> <Button className={"btn-default"}  id={"nine"} value={"9"} handleNumber={this.handleNumber}/> </div>      
+       <div className="btn"> <button className={"btn-default"} id="add" value="+" onClick={this.handleOperactor}>+</button> </div>
+       </div>
+       <div className="abc">
+       <div className="btn"> <Button  className={"btn-default"} id={"four"} value={"4"} handleNumber={this.handleNumber}/></div>
+       <div className="btn"><Button  className={"btn-default"} id={"five"} value={"5"} handleNumber={this.handleNumber}/></div>
+       <div className="btn"><Button  className={"btn-default"} id={"six"} value={"6"} handleNumber={this.handleNumber}/></div>
+       <div className="btn"> <button  className="btn-default" id="subtract" value="-" onClick={this.handleOperactor}>-</button> </div>
+       </div>
+       <div className="abc">
+       <div className="btn"><Button className={"btn-default"} id={"one"} value={"1"} handleNumber={this.handleNumber}/></div>
+       <div className="btn"><Button className={"btn-default"} id={"two"} value={"2"} handleNumber={this.handleNumber}/></div>
+       <div className="btn"><Button className={"btn-default"} id={"three"} value={"3"} handleNumber={this.handleNumber}/></div>
+       <div className="btn"> <button className="btn-default" id="multiply" value="*" onClick={this.handleOperactor}>*</button> </div>
+         </div>
+        <div className="abc">
+       <div className="btn"> <Button className={"btn-default"} id={"zero"} value={"0"} handleNumber={this.handleNumber}/></div>
+       <div className="btn"> <button className="btn-default" id="decimal" value="." onClick={this.handleDecimal}>.</button> </div>       
+       <div className="btn"> <button className="btn-default" id="equals" onClick={this.handleEvaluate}>=</button> </div>    
+       <div className="btn"> <button className="btn-default" id="divide" value="/" onClick={this.handleOperactor}>/</button> </div>
+       </div>
+       
+       <div>
+         <div id="formula"><h4>Your formula:</h4> {this.state.formula}</div>
          <br/>
          <div id="display">
-        { this.state.currentVal}
+         <h4>Your Value:</h4>{this.state.currentVal}
         </div>
          </div>
        </div>
